@@ -6,11 +6,12 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
-use App\Classes\dadata\DadataClient;
+use App\Classes\Dadata\DadataClient;
+use App\Exceptions;
+
 class ApiController extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-	
+ 
 	
 	public function getInnWithPhpClass()
 	{
@@ -24,12 +25,15 @@ class ApiController extends BaseController
 		foreach ($response as $key => $arr) {
 			foreach ($arr as  $key2 =>$suggestions) {
 				$dataArray[] = array(
-					'Наименование'=>$suggestions,
-					'КПП'=>$arr['data']['kpp'],
+					'Имя'=>'Иван',
+					'Номер'=>'7999999999',
 		   
 				);
+				
 				return $dataArray;
 			}			 		
 		}
+		
+		
 	}
 }

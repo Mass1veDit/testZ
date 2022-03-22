@@ -7,10 +7,11 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use App\Classes\Dadata\DadataClient;
+use App\Exceptions;
+
 class ApiController extends BaseController
 {
-    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-	
+ 
 	
 	public function getInnWithPhpClass()
 	{
@@ -28,8 +29,11 @@ class ApiController extends BaseController
 					'КПП'=>$arr['data']['kpp'],
 		   
 				);
+				
 				return $dataArray;
 			}			 		
 		}
+		
+		
 	}
 }
