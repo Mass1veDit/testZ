@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/getInnWithPhpClass', 'App\Http\Controllers\Api\ApiController@getInnWithPhpClass');
 Route::get('/getInnWithDaDataLibrary', 'App\Http\Controllers\Api\ApiController@getInnWithDaDataLibrary');
+Route::get('/getInnWithPhpSimple', 'App\Http\Controllers\Api\ApiController@getInnWithPhpSimple');
